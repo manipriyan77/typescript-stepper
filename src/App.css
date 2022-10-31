@@ -32,7 +32,41 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.complete {
+  color: blue;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step {
+  border-radius: 50px;
+  background-color: yellow;
+}
+
+hr {
+  border-radius: 10px;
+  border: 5px solid green;
+  width: 20%;
 }
