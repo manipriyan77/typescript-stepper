@@ -1,36 +1,58 @@
 import React, { useState } from "react";
+import { Button, ButtonWrapper, ListWrapper, StepperWrapper } from "../Style/Stepper.style";
 
 const Stepper = () => {
-  const steps: string[] = ["first", "second", "third", "fourth", "fifth"];
-  const [stepper, setStepper] = useState<number>(1);
-  const [isComplete, setIsComplete] = useState<boolean>(false);
+  const [stepperCount, setStepperCount] = useState<number>(1);
+  const array = ["first", "second", "third", "fourth", "fifth"];
   return (
-    <div>
-      <div className="container">
-        {steps.map((step, i) => {
+    <>
+      <ListWrapper>
+        {array.map((element, i) => {
           return (
-            <div
+            <li
               key={i}
-              className={`step-item ${stepper === i + 1 && "active"} ${
-                (i + 1 < stepper || isComplete) && "complete"
+              className={`${stepperCount === i + 1 && "active"} ${
+                i + 1 < stepperCount && "complete"
               } `}
             >
-              <div className="step">
-                {i + 1 < stepper || isComplete ? <span>Done</span> : i + 1}
-              </div>
-              <p className="text-gray-500">{step}</p>
-            </div>
+              {element}
+            </li>
           );
         })}
-      </div>
-      <button
-        onClick={() => {
-          stepper === steps.length ? setIsComplete(true) : setStepper((prev) => prev + 1);
-        }}
-      >
-        {stepper === steps.length ? "Finish" : "Next"}
-      </button>
-    </div>
+      </ListWrapper>
+
+      {stepperCount === 1 ? (
+        <ButtonWrapper>
+          <Button onClick={() => setStepperCount((prev) => prev + 1)}>Next</Button>
+        </ButtonWrapper>
+      ) : stepperCount <= array.length && stepperCount > 1 ? (
+        <ButtonWrapper>
+          <Button onClick={() => setStepperCount((prev) => prev - 1)}>Prev</Button>
+          <Button onClick={() => setStepperCount((prev) => prev + 1)}>Next</Button>
+        </ButtonWrapper>
+      ) : (
+        <ButtonWrapper>
+          <Button>Finish</Button>
+        </ButtonWrapper>
+      )}
+
+      {/* <div>
+        <ul>
+          {array.map((element, i) => {
+            return (
+              <li
+                key={i}
+                className={`${stepperCount === i + 1 && "active"} ${
+                  i + 1 < stepperCount && "complete"
+                } `}
+              >
+                {element}
+              </li>
+            );
+          })}
+        </ul>
+      </div> */}
+    </>
   );
 };
 
