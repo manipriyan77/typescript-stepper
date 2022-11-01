@@ -1,37 +1,58 @@
 import React, { useState } from "react";
+import { Button, ButtonWrapper, ListWrapper, StepperWrapper } from "../Style/Stepper.style";
 
 const Stepper2 = () => {
   const [stepperCount, setStepperCount] = useState<number>(1);
   const array = ["first", "second", "third", "fourth", "fifth"];
   return (
-    <div>
-      <section style={{ display: "flex", justifyContent: "space-between" }}>
+    <>
+      <ListWrapper>
         {array.map((element, i) => {
           return (
-            <div
+            <li
               key={i}
               className={`${stepperCount === i + 1 && "active"} ${
                 i + 1 < stepperCount && "complete"
               } `}
             >
               {element}
-            </div>
+            </li>
           );
         })}
-      </section>
+      </ListWrapper>
 
       {stepperCount === 1 ? (
-        <button onClick={() => setStepperCount((prev) => prev + 1)}>Next</button>
+        <ButtonWrapper>
+          <Button onClick={() => setStepperCount((prev) => prev + 1)}>Next</Button>
+        </ButtonWrapper>
       ) : stepperCount <= array.length && stepperCount > 1 ? (
-        <div>
-          <button onClick={() => setStepperCount((prev) => prev - 1)}>Prev</button>
-          <button onClick={() => setStepperCount((prev) => prev + 1)}>Next</button>
-        </div>
+        <ButtonWrapper>
+          <Button onClick={() => setStepperCount((prev) => prev - 1)}>Prev</Button>
+          <Button onClick={() => setStepperCount((prev) => prev + 1)}>Next</Button>
+        </ButtonWrapper>
       ) : (
-        <button>Finish</button>
+        <ButtonWrapper>
+          <Button>Finish</Button>
+        </ButtonWrapper>
       )}
-      <hr />
-    </div>
+
+      {/* <div>
+        <ul>
+          {array.map((element, i) => {
+            return (
+              <li
+                key={i}
+                className={`${stepperCount === i + 1 && "active"} ${
+                  i + 1 < stepperCount && "complete"
+                } `}
+              >
+                {element}
+              </li>
+            );
+          })}
+        </ul>
+      </div> */}
+    </>
   );
 };
 

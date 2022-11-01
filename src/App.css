@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -63,10 +65,4 @@
 .step {
   border-radius: 50px;
   background-color: yellow;
-}
-
-hr {
-  border-radius: 10px;
-  border: 5px solid green;
-  width: 20%;
 }

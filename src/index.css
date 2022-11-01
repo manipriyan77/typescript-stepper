@@ -11,3 +11,89 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.line {
+  width: 90%;
+  height: 10px;
+  margin: auto;
+  border: 1px solid black;
+  position: relative;
+}
+
+.line::after {
+  content: '\A';
+  position: absolute;
+  background: black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+}
+
+.container {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.wrapperul {
+  width: 100%
+}
+
+
+
+ul li {
+  list-style-type: none;
+  float: left;
+  width: 13%;
+  position: relative;
+  text-align: center;
+}
+
+ul li:before {
+  content: " ";
+  line-height: 30px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px;
+  background-color: white
+}
+
+ul li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #ddd;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+
+ul li:first-child:after {
+  content: none;
+}
+
+ul li.active {
+  color: dodgerblue;
+}
+
+ul li.active:before {
+  border-color: dodgerblue;
+  background-color: dodgerblue
+}
+
+ul .active:after {
+  background-color: dodgerblue;
+}
+
+ul .complete:after {
+  background-color: green;
+}
+
+ul li.complete:before {
+  background-color: green;
+}
