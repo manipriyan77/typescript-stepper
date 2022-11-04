@@ -20,3 +20,11 @@ export const ListWrapper = styled.ul`
   display: flex;
   justify-content: center;
 `;
+
+export const List = styled.li`
+  list-style-type: none;
+  float: left;
+  width: 13%;
+  position: relative;
+  text-align: center;
+`;

@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { Button, ButtonWrapper, ListWrapper, StepperWrapper } from "../Style/Stepper.style";
+import { useState } from "react";
+import { Button, ButtonWrapper, List, ListWrapper } from "../Style/Stepper.style";
 
 const Stepper = () => {
   const [stepperCount, setStepperCount] = useState<number>(1);
-  const array = ["first", "second", "third", "fourth", "fifth"];
+  const array = ["First", "Second", "Third", "Fourth", "Fifth"];
+
   return (
     <>
       <ListWrapper>
         {array.map((element, i) => {
           return (
-            <li
+            <List
               key={i}
-              className={`${stepperCount === i + 1 && "active"} ${
-                i + 1 < stepperCount && "complete"
-              } `}
+              className={`${stepperCount === i + 1 && "active"} 
+              ${i + 1 < stepperCount && "complete"} `}
             >
               {element}
-            </li>
+            </List>
           );
         })}
       </ListWrapper>
@@ -35,23 +35,6 @@ const Stepper = () => {
           <Button>Finish</Button>
         </ButtonWrapper>
       )}
-
-      {/* <div>
-        <ul>
-          {array.map((element, i) => {
-            return (
-              <li
-                key={i}
-                className={`${stepperCount === i + 1 && "active"} ${
-                  i + 1 < stepperCount && "complete"
-                } `}
-              >
-                {element}
-              </li>
-            );
-          })}
-        </ul>
-      </div> */}
     </>
   );
 };
