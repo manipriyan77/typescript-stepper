@@ -97,3 +97,12 @@ ul .complete:after {
 ul li.complete:before {
   background-color: green;
 }
+
+.active {
+  color: green;
+}
+
+.disable button {
+  color: grey !important;
+  background-color: grey !important;
+}
