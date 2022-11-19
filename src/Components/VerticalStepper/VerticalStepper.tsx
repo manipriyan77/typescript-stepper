@@ -52,6 +52,15 @@ const VerticalStepper = () => {
           </>
         );
       })}
+
+      {stepperCount <= textArrays.length ? (
+        ""
+      ) : (
+        <ButtonWrapper>
+          <div> All steps completed - you're finished</div>
+          <ButtonTransparent onClick={() => setStepperCount(1)}>Reset</ButtonTransparent>
+        </ButtonWrapper>
+      )}
     </VerticalStepperWrapper>
   );
 };
