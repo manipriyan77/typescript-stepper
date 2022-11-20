@@ -104,7 +104,7 @@ export const StepperHeadingWrapper = styled.div`
   padding: 8px 0;
 `;
 
-export const CircleNumber = styled.circle`
+export const CircleNumber = styled.span`
   width: 20px;
   height: 20px;
   background-color: #1976d2;

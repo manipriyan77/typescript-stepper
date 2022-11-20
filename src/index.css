@@ -99,10 +99,14 @@ ul li.complete:before {
 }
 
 .active {
-  color: green;
+  color: black;
 }
 
-.disable button {
+.disable span {
   color: grey !important;
-  background-color: grey !important;
+}
+
+.disable span:first-child {
+  background-color: gray;
+  color: white !important;
 }

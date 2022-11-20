@@ -14,6 +14,8 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin: auto;
+  width: 10%;
+  justify-content: center;
 `;
 
 export const ListWrapper = styled.ul`

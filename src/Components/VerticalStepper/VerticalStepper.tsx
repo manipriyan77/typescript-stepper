@@ -20,13 +20,14 @@ const VerticalStepper = () => {
     "An ad group contains one or more ads which target a shared set of keywords.    ",
     "Try out different ad text to see what brings in the most customers, and learn how to enhance your ads using features like ad extensions. If you run into any problems with your ads, find out how to tell if they're running and how to resolve approval issues.    ",
     "Try out different ad text to see what brings in the most customers, and learn how to enhanur ads, find out how to tell if they're running and how to resolve approval issues.    ",
+    "Try out different ad text to see what brings in the most customers, and learn how to enhanur ads, find out how to tell if they're running and how to resolve approval issues.    ",
   ];
 
   return (
     <VerticalStepperWrapper>
       {textArrays.map((txt, i) => {
         return (
-          <>
+          <div key={i}>
             <StepperHeadingWrapper
               className={`${stepperCount === i + 1 && "active"} 
               ${i + 1 > stepperCount && "disable"} `}
@@ -49,7 +50,7 @@ const VerticalStepper = () => {
                 )}
               </ButtonWrapper>
             )}
-          </>
+          </div>
         );
       })}
 

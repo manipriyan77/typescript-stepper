@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, ButtonWrapper, List, ListWrapper } from "../Style/Stepper.style";
+import { Button, ButtonWrapper, List, ListWrapper } from "./Stepper.style";
 
 const Stepper = () => {
   const [stepperCount, setStepperCount] = useState<number>(1);

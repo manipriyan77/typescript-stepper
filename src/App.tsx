@@ -1,12 +1,12 @@
 // import "./App.css";
 
-import Stepper from "./Components/Stepper";
+import Stepper from "./Components/HorizontalStepper/Stepper";
 import VerticalStepper from "./Components/VerticalStepper/VerticalStepper";
 
 function App() {
   return (
     <div className="App">
-      {/* <Stepper /> */}
+      <Stepper />
       <VerticalStepper />
     </div>
   );
